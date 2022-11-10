@@ -1,5 +1,6 @@
 pipeline {
 	agent any
+	dependencyCheck additionalArguments: '', odcInstallation: 'dependency-check 7.3.0'
 	stages {
 		stage('Checkout SCM') {
 			steps {
