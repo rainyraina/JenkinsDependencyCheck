@@ -1,6 +1,5 @@
 pipeline {
 	agent any
-	dependencyCheck additionalArguments: '', odcInstallation: 'dependency-check 7.3.0'
 	stages {
 		stage('Checkout SCM') {
 			steps {
@@ -10,7 +9,8 @@ pipeline {
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
+				dependencyCheck additionalArguments: '', odcInstallation: 'dependency-check 7.3.0'
+				//dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
 			}
 		}
 	}	
